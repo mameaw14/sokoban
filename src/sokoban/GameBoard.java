@@ -118,7 +118,16 @@ public class GameBoard {
     }
  
     public String toString() {
-        return "";
+        String str = "";
+        String[] copyBoard = baseBoard;
+        for(int i=0;i<numBoxes;i++){
+            copyBoard[boxRows[i]] = copyBoard[boxRows[i]].substring(0,boxCols[i]) + "O" + copyBoard[boxRows[i]].substring(boxCols[i]+1);
+        }
+        copyBoard[playerRow] = copyBoard[playerRow].substring(0,playerCol) + "A" + copyBoard[playerRow].substring(playerCol+1);
+        for(String x: copyBoard){
+            str += x+"\n";
+        }
+        return str;
     }
 
 }

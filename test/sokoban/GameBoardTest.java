@@ -95,4 +95,15 @@ public class GameBoardTest {
     public void testHasBoxAtTrue(){
         assertTrue(smallBoard.hasBoxAt(1,2));
     }
+    
+    @Test
+    public void testToStringWithInitialPositions() {
+        assertEquals(		
+                " #####\n"+
+                "#*O.A#\n"+
+                "#...O#\n"+
+                "##..*#\n"+
+                " #####\n",
+                smallBoard.toString());
+    }
 }
