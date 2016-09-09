@@ -110,7 +110,8 @@ public class GameBoard {
     }
  
     public boolean hasExitAt(int r, int c) {
-        return false;
+        if(r<0||c<0||r>=height||c>=width) return false;
+        return baseBoard[r].charAt(c) == '*';
     }
  
     public String toString() {
